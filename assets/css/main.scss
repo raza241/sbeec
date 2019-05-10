@@ -1,0 +1,123 @@
+/**
+ * =================================================================== 
+ *  Theme: SBEEC
+ *  Author: Ubiquify Digtal
+ *  Made By: MUHAMMAD Raza
+ * =================================================================== 
+ */
+body {
+  margin: 0;
+  padding: 0;
+}
+/**
+ * =================================================================== 
+ *  Colors
+ *
+ * =================================================================== 
+ */
+$colors: (
+  primary-color: #85c226,
+  light-blue: #0595d8,
+  black: #000,
+  white: #fff
+);
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+.primary-color {
+  color: color(primary-color);
+}
+.light-blue {
+  color: color(light-blue);
+}
+.black {
+  color: color(black);
+}
+.white {
+  color: color(white);
+}
+/**
+ * =================================================================== 
+ *  
+ *  fonts
+ *
+ * =================================================================== 
+ */
+@font-face {
+  font-family: gotham-black;
+  src: url(../fonts/GOTHAM-BLACK.TTF);
+}
+@font-face {
+  font-family: gotham-book;
+  src: url(../fonts/GothamBook.ttf);
+}
+@font-face {
+  font-family: breeserif;
+  src: url(../fonts/BreeSerif-Regular.ttf);
+}
+header {
+  background: color(white);
+}
+.my-nav {
+  padding-top: 0;
+  padding-bottom: 0;
+  .nav-link {
+    text-transform: uppercase;
+    color: color(black);
+    font-family: gotham-book;
+    font-size: 14px;
+  }
+}
+
+.logo {
+  max-width: 100px;
+}
+.partner {
+  &__logo {
+    max-width: 100px;
+    border-left: 1px solid;
+    padding: 10px 5px;
+  }
+}
+
+.services {
+  background-image: url("<svg xmlns="http://www.w3.org/2000/svg" width="1903" height="632.69" viewBox="0 0 1903 632.69">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1 {
+        fill: #85c226;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M-1,722H1903v632.69H-1V722ZM869.426,388.179C1470.39,459.984,1943.62,634.9,1926.41,778.862S1408.09,981.322,807.134,909.517-267.056,662.8-249.854,518.834,268.466,316.375,869.426,388.179Z" transform="translate(0 -722)"/>
+</svg>");
+}

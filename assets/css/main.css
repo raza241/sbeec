@@ -1,0 +1,86 @@
+/**
+ * =================================================================== 
+ *  Theme: SBEEC
+ *  Author: Ubiquify Digtal
+ *  Made By: MUHAMMAD Raza
+ * =================================================================== 
+ */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * =================================================================== 
+ *  Colors
+ *
+ * =================================================================== 
+ */
+.primary-color {
+  color: #85c226;
+}
+
+.light-blue {
+  color: #0595d8;
+}
+
+.black {
+  color: #000;
+}
+
+.white {
+  color: #fff;
+}
+
+/**
+ * =================================================================== 
+ *  
+ *  fonts
+ *
+ * =================================================================== 
+ */
+@font-face {
+  font-family: gotham-black;
+  src: url(../fonts/GOTHAM-BLACK.TTF);
+}
+
+@font-face {
+  font-family: gotham-book;
+  src: url(../fonts/GothamBook.ttf);
+}
+
+@font-face {
+  font-family: breeserif;
+  src: url(../fonts/BreeSerif-Regular.ttf);
+}
+
+header {
+  background: #fff;
+}
+
+.my-nav {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.my-nav .nav-link {
+  text-transform: uppercase;
+  color: #000;
+  font-family: gotham-book;
+  font-size: 14px;
+}
+
+.logo {
+  max-width: 100px;
+}
+
+.partner__logo {
+  max-width: 100px;
+  border-left: 1px solid;
+  padding: 10px 5px;
+}
+
+.services {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><linearGradient id='gradient'><stop offset='10%' stop-color='%23F00'/><stop offset='90%' stop-color='%23fcc'/> </linearGradient><rect fill='url(%23gradient)' x='0' y='0' width='100%' height='100%'/></svg>");
+}
+/*# sourceMappingURL=main.css.map */
