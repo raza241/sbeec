@@ -9,6 +9,17 @@ body {
   margin: 0;
   padding: 0;
 }
+ul {
+  margin: 0 !important;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none !important;
+  }
+}
 /**
  * =================================================================== 
  *  Colors
@@ -19,7 +30,8 @@ $colors: (
   primary-color: #85c226,
   light-blue: #0595d8,
   black: #000,
-  white: #fff
+  white: #fff,
+  footer-color: #0b0a13
 );
 @function color($color-name) {
   @return map-get($colors, $color-name);
@@ -52,6 +64,10 @@ $colors: (
   src: url(../fonts/GothamBook.ttf);
 }
 @font-face {
+  font-family: gotham-bold;
+  src: url(../fonts/GothamBold.ttf);
+}
+@font-face {
   font-family: breeserif;
   src: url(../fonts/BreeSerif-Regular.ttf);
 }
@@ -59,8 +75,8 @@ header {
   background: color(white);
 }
 .my-nav {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
   .nav-link {
     text-transform: uppercase;
     color: color(black);
@@ -73,51 +89,268 @@ header {
   max-width: 100px;
 }
 .partner {
+  li {
+    float: left;
+    border-left: 1px solid #d2d2d2;
+    height: 63px;
+  }
   &__logo {
-    max-width: 100px;
-    border-left: 1px solid;
-    padding: 10px 5px;
+    max-width: 80px;
+    padding: 0px 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
-
-.services {
-  background-image: url("<svg xmlns="http://www.w3.org/2000/svg" width="1903" height="632.69" viewBox="0 0 1903 632.69">
-  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
-<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
-   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-      <rdf:Description rdf:about=""/>
-   </rdf:RDF>
-</x:xmpmeta>
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                           
-<?xpacket end="w"?></metadata>
-<defs>
-    <style>
-      .cls-1 {
-        fill: #85c226;
-        fill-rule: evenodd;
+.banner {
+  background-image: url(../img/banner-img.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  .carousel,
+  .carousel-inner,
+  .carousel-item {
+    height: 100% !important;
+  }
+  .slider-arrow {
+    max-width: 25px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .slider-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div {
+      background: RGBA(133, 194, 38, 0.69);
+      display: inline-block;
+      padding: 20px;
+      text-transform: uppercase;
+      text-align: justify;
+      p {
+        font-family: gotham-book;
+        font-size: 37px;
+        color: color(black);
+        margin: 0;
       }
-    </style>
-  </defs>
-  <path class="cls-1" d="M-1,722H1903v632.69H-1V722ZM869.426,388.179C1470.39,459.984,1943.62,634.9,1926.41,778.862S1408.09,981.322,807.134,909.517-267.056,662.8-249.854,518.834,268.466,316.375,869.426,388.179Z" transform="translate(0 -722)"/>
-</svg>");
+      span {
+        font-family: gotham-black;
+        font-size: 50px;
+        color: color(white);
+      }
+    }
+  }
+}
+.section__title {
+  font-size: 35px;
+  font-family: breeserif;
+  position: relative;
+  text-align: center;
+  margin: 0 0 35px;
+  text-transform: uppercase;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 12px 0;
+  &--services {
+    background-image: url(../img/services-title-bg.png);
+  }
+  &--testimonial {
+    color: color(primary-color);
+    background-image: url(../img/testimonial-title-bg.png);
+  }
+  &--segments {
+    color: color(white);
+    background-image: url(../img/segments-title-bg.png);
+  }
+}
+.services {
+  background-image: url("../img/services-bg_02.png");
+  background-size: cover;
+  background-position: center;
+  padding: 300px 0 40px;
+  margin: -220px -0 0;
+  position: relative;
+  z-index: 2;
+  &__block {
+    text-align: center;
+    color: color(black);
+    width: 250px;
+    margin: 0 auto;
+  }
+  &__icon {
+    color: color(black);
+  }
+  &__title {
+    font-family: gotham-bold;
+    font-size: 18px;
+    display: block;
+    margin: 25px 0 0;
+  }
+}
+.testimonial {
+  background-image: url(../img/testimonial-bg.png);
+  background-position: center;
+  background-size: cover;
+  padding: 40px 0;
+  text-align: center;
+  &__detail {
+    color: color(white);
+    padding: 30px;
+    &::after {
+      position: absolute;
+      top: 0;
+      left: -54px;
+      content: "";
+      background: url(../img/testimonial-iton-icon.png);
+      width: 95px;
+      height: 63px;
+    }
+  }
+  &__user {
+    display: flex;
+    justify-content: center;
+    &--detail {
+      text-align: left;
+      padding: 0 0 0 20px;
+      text-transform: capitalize;
+      font-size: 16px;
+
+      span {
+        color: color(primary-color);
+      }
+      li {
+        display: inline-block;
+        border-right: 1px solid #fff;
+        padding: 0 10px 0 0;
+        line-height: 1;
+        &:last-child {
+          border: none;
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}
+.segments {
+  background: color(light-blue);
+  padding: 40px 0;
+}
+.clients {
+  background: color(white);
+  padding: 40px;
+  text-align: center;
+  li {
+    display: inline-block;
+    width: 200px;
+    height: 96px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+    margin: 0px 5px 30px;
+    vertical-align: middle;
+    &:nth-child(n + 6) {
+      margin: 0 5px 0;
+    }
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}
+footer {
+  padding: 40px 0;
+  background: color(footer-color);
+  .block {
+    margin-right: 35px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &__title {
+      color: color(white);
+      font-size: 24px;
+      font-family: breeserif;
+      text-transform: capitalize;
+      margin: 0 0 30px;
+    }
+    &__button {
+      width: 200px;
+      height: 45px;
+      border-radius: 20px;
+      background: color(primary-color);
+      color: color(white);
+      text-align: center;
+      font-size: 16px;
+      font-family: gotham-book;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 0 20px;
+    }
+  }
+  .links {
+    li {
+      line-height: 1;
+      position: relative;
+      padding-left: 15px;
+      margin-bottom: 6px;
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        content: "";
+        width: 3px;
+        height: 3px;
+        background: color(primary-color);
+        border-radius: 50%;
+      }
+    }
+    a {
+      font-family: gotham-book;
+      color: color(white) !important;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+  }
+  .news {
+    li {
+      width: 250px;
+      display: flex;
+      align-items: center;
+      float: left;
+    }
+    &__thumbnail {
+      max-width: 160px;
+      float: left;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    &__detail {
+      margin-left: 10px;
+      h4 {
+        font-size: 16px;
+        color: color(white);
+        line-height: 1;
+        margin: 0 0 15px;
+        text-transform: uppercase;
+      }
+      p {
+        line-height: 1;
+        color: #b9b9ba;
+        font-size: 14px;
+        margin: 0;
+      }
+    }
+  }
 }
